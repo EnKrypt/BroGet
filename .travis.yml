@@ -1,2 +1,4 @@
 language: android
-before_script: cd clients/android_app/BroGet/
+before_script:
+  - cd clients/android_app/BroGet/
+  - chmod +x gradlew
