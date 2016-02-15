@@ -69,7 +69,7 @@ public class BackgroundChecker extends Service{
                     while(true) {
                         Thread.sleep(10000);
                         Log.i(TAG, "Will check now to sync downloads");
-                        final String APIURI="192.168.0.100:8081/download";
+                        final String APIURI="192.168.0.105:8081/download";
                         //Replace with appropriate url for your config
                         new Thread(new Runnable() {
                             @Override

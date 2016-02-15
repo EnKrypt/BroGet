@@ -28,7 +28,7 @@ import java.util.Map;
 
 public class Sender extends Service {
     private boolean isRunning  = false;
-    public String APIURI = "192.168.0.102:8081/init";
+    public String APIURI = "enkrypt.in:8081/init";
     //Replace with appropriate url for your config
     public String TAG="BG";
 

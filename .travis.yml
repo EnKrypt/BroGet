@@ -1,2 +1,2 @@
 language: android
-script: cd clients/android_app/BroGet/
+before_script: cd clients/android_app/BroGet/
