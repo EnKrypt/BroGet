@@ -15,7 +15,8 @@ var exec = require('child_process').exec;
 
 var app = express();
 
-var cloud_url = "http://192.168.0.102:8081";
+var cloud_url = "http://enkrypt.in:8081";
+var self_internal_ip = "192.168.0.105";
 //Change with appropriate url for your config
 
 function puts(error, stdout, stderr) { sys.puts(stdout) }
@@ -50,6 +51,9 @@ interval=setInterval(function(){
 				console.log(downloads);
 				downloads.forEach(function(down){
 					exec("aria2c --allow-overwrite=true " + decodeURIComponent(down.link), function(){
+						down.link=decodeURIComponent(down.link);
+						down.link="http://"+self_internal_ip+down.link.substring(down.link.lastIndexOf("/"));
+						console.log(down.link);
 						db[collection].save(down, function(err,saved){
 							if (err||!saved){
 								console.log(err);
